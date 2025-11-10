@@ -4,14 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Einfacher Audio-Player</title>
+  <style>
+    :root{--bg:#0f1724;--card:#111827;--accent:#06b6d4;--text:#e6eef6}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
+    body{display:grid;place-items:center;padding:24px;background:linear-gradient(180deg,var(--bg),#071124);color:var(--text)}
+    .card{width:min(720px,96%);background:var(--card);border-radius:12px;padding:28px;box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+    h1{margin:0 0 12px;font-size:20px;font-weight:600}
+    p{margin:0 0 18px;color:#bcd3df}
+    .player{display:flex;gap:12px;align-items:center}
+    .play-btn{appearance:none;border:0;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#052023;padding:10px 14px;border-radius:8px;font-weight:700;cursor:pointer}
+    .info{flex:1}
+    audio{width:100%;outline:none}
+    .note{margin-top:14px;font-size:13px;color:#98b4c6}
+  </style>
 </head>
 <body>
   <div class="card">
-    <h1>Einfacher Audio-Player</h1>
+    <h1>Audio deteien</h1>
     <p>Spielt die Datei <code>/audio.mp3</code>. Lege deine Datei im Webserver-Root ab oder passe den Pfad an.</p>
 
     <div class="player">
       <!-- native audio element with fallback -->
+      <audio id="audio" controls preload="metadata">
+        <source src="audio.mp3" type="audio/mpeg">
+        Dein Browser unterstützt das Audio-Element nicht.
+      </audio>
+      <audio id="audio" controls preload="metadata">
+        <source src="audio.mp3" type="audio/mpeg">
+        Dein Browser unterstützt das Audio-Element nicht.
+      </audio>
       <audio id="audio" controls preload="metadata">
         <source src="audio.mp3" type="audio/mpeg">
         Dein Browser unterstützt das Audio-Element nicht.
